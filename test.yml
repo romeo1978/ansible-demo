@@ -1,0 +1,12 @@
+---  
+- name: create test file  
+hosts: dev  
+user: root  
+gather_facts: false
+
+vars:  
+- filename: "/tmp/test.txt"
+
+tasks:  
+- name: create {{ filename }} on dev  
+user: file="{{ filename }}"
